@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 import numpy as np
 import pandas as pd
 import joblib
-
+import os 
 # Load the Decision Tree Regressor model
 dtr = joblib.load('dtr.pkl')
 
@@ -35,3 +35,4 @@ def predict():
 # Python main
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+
